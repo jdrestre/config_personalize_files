@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # conect server holberton
+# used: ./server
 ssh ubuntu@34.74.80.43
