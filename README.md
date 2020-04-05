@@ -1,13 +1,23 @@
-# config_personalize_files
-Configuration files and personalize bash script
+---
+<h1 align="center">"Project name"</h1>
 
 ---
-File Name|File Description
----|---
-clean_emacs|remove files .*~ and *~
-.bashrc|configuration bash commands
-.emacs|emacs configuration
-.gitconfig|general options for git
-.gitignore_global|files ignored for github
-server|conection ssh with server 1238-web-01 holberton
-transfer_file|transfer file from client to server holberton 1238-web-01
+
+## Description
+Repository to study the following Topic: 
+
+
+## Task Project
+---
+File Name|Task Name|Task Description
+---|---|---
+
+
+---
+## Author
+
+- Juan David Restrepo Z. [@jdrestre](https://twitter.com/jdrestre)
+
+---
+![N|Solid](https://www.holbertonschool.com/holberton-logo.png) ![N|Solid](https://intranet.hbtn.io/assets/holberton-logo-coral-27055cb2f875eb10bf3b3942e52a24581bc0667695bdc856d4f08b469b678000.png)
+---
