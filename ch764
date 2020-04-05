@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+if [ $# -lt 1 ]
+then
+    echo "Usage: ./ch764 'file_name'"
+else
+    chmod 764 "$1"
+fi
