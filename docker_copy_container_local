@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# docker cp mycontainer:/foo.txt foo.txt
+# 1 --> Container_Id
+# 2 --> Path into Container
+# 3 --> File Name on local
+if [ $# -lt 1 ]
+then
+    echo "Usage: 0)./docker_copy_container_local 1)CONTAINER_ID 2)CONTAINER_PATH:3)NAME_FILE_LOCAL"
+else
+    docker cp "$1":"$2" "$3"
+fi

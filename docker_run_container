@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# $1: Image_Name
+if [ $# -lt 1 ]
+then
+    echo "Usage: 0)./docker_run_container IMAGE_NAME"
+else
+    docker run -d -ti "$1"
+fi

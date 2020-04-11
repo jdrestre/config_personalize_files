@@ -2,9 +2,96 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+###################################################
+###################################################
+
+###################################################
+# GENERAL PERSONALIZED BASH SCRIPT
+
+# Edit .bashrc commands
+alias bashrc_edit='emacs ~/.bashrc'
+
+# update change into bashrc file
+alias bashrc_update='source ~/.bashrc'
+
 # Copy clipboard option pbcopy on Ubuntu/Linux
 alias pbcopy="xclip -sel clip"
 
+# Change permmision files 764
+function ch764 {
+    if [ $# -lt 1 ]
+    then
+	echo "Usage: chmod764 '#n_file_name'"
+    else
+	chmod 764 ${*}
+    fi
+}
+
+# Clean emacs files ~ virgulilla
+function clean_emacs {
+    rm *~
+    rm .*~
+}
+
+###################################################
+
+###################################################
+#DATABASE MYSQL OPTIONS
+# Connect to MySQL
+alias db_mysql='mysql -u root -p'
+
+
+###################################################
+
+
+###################################################
+# CONNECTION SSH WEB SERVER HOLBERTON
+# Connect web server 01
+alias 1238_web_01='ssh ubuntu@34.74.80.43'
+
+# Connect web server 02
+alias 1238_web_02='ssh ubuntu@54.89.185.132'
+
+# Connect load balancer
+alias 1238_lb_01='ssh ubuntu@54.221.151.142'
+
+###################################################
+
+###################################################
+# TRANSFER FILES WEB SERVER AND LOAD BALANCER HOLBERTON PROJECTS
+# Transfers a file from our client to a server web01 Holberton web server
+function transfer_file_1238_web_01 {
+    if [ $# -lt 1 ]
+    then
+	echo "Usage: transfer_file_1238-web-01 'file_name'"
+    else
+	scp -o StrictHostKeyChecking=no -i ~/.ssh/holberton "$1" ubuntu@34.74.80.43:~/
+    fi
+}
+
+# Transfers a file from our client to a server web02 Holberton web server
+function transfer_file_1238_web_02 {
+    if [ $# -lt 1 ]
+    then
+	echo "Usage: transfer_file_1238-web-02 'file_name'"
+    else
+	scp -o StrictHostKeyChecking=no -i ~/.ssh/holberton "$1" ubuntu@54.89.185.132:~/
+    fi
+}
+
+# Transfers a file from our client to a server lb01 Holberton Load Balancer
+function transfer_file_1238_lb_01 {
+    if [ $# -lt 1 ]
+    then
+	echo "Usage: transfer_file_1238-lb-01 'file_name'"
+    else
+	scp -o StrictHostKeyChecking=no -i ~/.ssh/holberton "$1" ubuntu@54.221.151.142:~/
+    fi
+}
+###################################################
+
+###################################################
+###################################################
 
 # If not running interactively, don't do anything
 case $- in

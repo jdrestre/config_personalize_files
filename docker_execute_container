@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# $1: Id_container
+if [ $# -lt 1 ]
+then
+    echo "Usage: 0)./docker_execute_container CONTAINER_ID"
+else
+
+docker exec -ti "$1" /bin/bash
+fi

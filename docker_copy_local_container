@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# $1: file copy
+# $2: docker_id
+# $3: container path Ex: / --> root
+if [ $# -lt 1 ]
+then
+    echo "Usage: 0)./docker_copy_local_container 1)FILE_COPY 2)DOCKER_ID:3)CONTAINER_PATH"
+else
+    docker cp "$1" "$2":"$3"
+fi
