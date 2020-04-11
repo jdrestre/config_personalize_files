@@ -91,6 +91,50 @@ function transfer_file_1238_lb_01 {
 ###################################################
 
 ###################################################
+# DOCKER COOMMANDS OPTIONS
+
+# Docker RUN container based from IMAGE
+function docker_run_container {
+    if [ $# -lt 1 ]
+    then
+	echo "Usage: docker_run_container IMAGE_NAME"
+    else
+	docker run -d -ti "$1"
+    fi
+}
+
+# Docker EXECUTE container
+function docker_execute_container {
+    if [ $# -lt 1 ]
+    then
+	echo "Usage: docker_execute_container CONTAINER_ID"
+    else
+	docker exec -ti "$1" /bin/bash
+    fi
+}
+
+# Docker COPY Local to Container
+function docker_copy_local_container {
+    if [ $# -lt 1 ]
+    then
+	echo "Usage: docker_copy_local_container 1)FILE_COPY 2)CONTAINER_ID:3)CONTAINER_PATH"
+    else
+	docker cp "$1" "$2":"$3"
+    fi
+}
+
+# Docker COPY Container to Local
+function docker_copy_container_local {
+    if [ $# -lt 1 ]
+    then
+	echo "Usage: docker_copy_container_local 1)CONTAINER_ID:2)CONTAINER_PATH 3)NAME_FILE_LOCAL"
+    else
+	docker cp "$1":"$2" "$3"
+    fi
+}
+###################################################
+
+###################################################
 ###################################################
 
 # If not running interactively, don't do anything
