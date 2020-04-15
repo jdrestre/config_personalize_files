@@ -5,6 +5,7 @@
 ###################################################
 ###################################################
 
+
 ###################################################
 # GENERAL PERSONALIZED BASH SCRIPT
 
@@ -32,15 +33,13 @@ function clean_emacs {
     rm *~
     rm .*~
 }
-
 ###################################################
+
 
 ###################################################
 #DATABASE MYSQL OPTIONS
 # Connect to MySQL
 alias db_mysql='mysql -u root -p'
-
-
 ###################################################
 
 
@@ -54,8 +53,8 @@ alias 1238_web_02='ssh ubuntu@54.89.185.132'
 
 # Connect load balancer
 alias 1238_lb_01='ssh ubuntu@54.221.151.142'
-
 ###################################################
+
 
 ###################################################
 # TRANSFER FILES WEB SERVER AND LOAD BALANCER HOLBERTON PROJECTS
@@ -89,6 +88,7 @@ function transfer_file_1238_lb_01 {
     fi
 }
 ###################################################
+
 
 ###################################################
 # DOCKER COOMMANDS OPTIONS
@@ -130,6 +130,91 @@ function docker_copy_container_local {
 	echo "Usage: docker_copy_container_local 1)CONTAINER_ID:2)CONTAINER_PATH 3)NAME_FILE_LOCAL"
     else
 	docker cp "$1":"$2" "$3"
+    fi
+}
+###################################################
+
+
+###################################################
+# GIT COMMANDS AND SCRIPT
+# Check git status of multiple repos: Source https://gist.github.com/mzabriskie/6631607
+function git_status {
+dir="$1"
+
+# No directory has been provided, use current
+if [ -z "$dir" ]
+then
+    dir="`pwd`"
+fi
+
+# Make sure directory ends with "/"
+if [[ $dir != */ ]]
+then
+	dir="$dir/*"
+else
+	dir="$dir*"
+fi
+
+# Loop all sub-directories
+for f in $dir
+do
+    # Only interested in directories
+    [ -d "${f}" ] || continue
+
+    echo -en "\033[0;35m"
+    echo "${f}"
+    echo -en "\033[0m"
+
+    # Check if directory is a git repository
+    if [ -d "$f/.git" ]
+    then
+	mod=0
+	cd $f
+
+	# Check for modified files
+	if [ $(git status | grep modified -c) -ne 0 ]
+	then
+	    mod=1
+	    echo -en "\033[0;31m"
+	    echo "Modified files"
+	    echo -en "\033[0m"
+	fi
+
+	# Check for untracked files
+	if [ $(git status | grep Untracked -c) -ne 0 ]
+	then
+	    mod=1
+	    echo -en "\033[0;31m"
+	    echo "Untracked files"
+	    echo -en "\033[0m"
+	fi
+
+	# Check if everything is peachy keen
+	if [ $mod -eq 0 ]
+	then
+	    echo "Nothing to commit"
+	fi
+
+	cd ../
+    else
+	echo "Not a git repository"
+    fi
+
+    echo
+done
+}
+###################################################
+
+
+###################################################
+# PYTHON DOCUMENTATION VERIFICATED
+# Execution into module if __name__ == "__main__":
+function py_doc_if_main {
+    if [ $# -lt 1 ]
+    then
+	echo "Usage: py_doc_if_main Name_File_Without_extention_.py"
+    else
+	python3 -c 'print(__import__("'$1'").__doc__)'
     fi
 }
 ###################################################
