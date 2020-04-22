@@ -1,11 +1,15 @@
 # "Project name"
 
----
+===
 
 ## Description
 
 ---
 Repository to study the following Topic:
+
+### General
+
+-
 
 ## Task Project
 
@@ -13,9 +17,9 @@ Repository to study the following Topic:
 File Name|Task Name|Task Description
 ---|---|---
 
----
-
 ## Author
+
+---
 
 - Juan David Restrepo Z. [@jdrestre](https://twitter.com/jdrestre)
 
