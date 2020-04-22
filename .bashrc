@@ -226,13 +226,42 @@ function git_pull_status {
 
 ###################################################
 # PYTHON DOCUMENTATION VERIFICATED
-# Execution into module if __name__ == "__main__":
-function py_doc_if_main {
+# Modules should have documentation Execution into module if __name__ == "__main__":
+function python_doc_all_modules {
     if [ $# -lt 1 ]
     then
-	echo "Usage: py_doc_if_main Name_File_Without_extention_.py"
+	echo "Usage: python_doc_all_modules Name_File_Without_extention_.py"
     else
 	python3 -c 'print(__import__("'$1'").__doc__)'
+    fi
+}
+
+# Classes should have documentation :
+function python_doc_MyClass {
+    if [ $# -lt 1 ]
+    then
+	echo "Usage: python_doc_MyClass Name_File_Without_extention_.py Class_Name"
+    else
+	python3 -c 'print(__import__("'$1'").'$2'.__doc__)'
+    fi
+}
+
+# Functions (inside and outside a class) should have documentation :
+function python_doc_my_function {
+    if [ $# -lt 1 ]
+    then
+	echo "Usage: python_doc_my_function Name_File_Without_extention_.py Function-Name"
+    else
+	python3 -c 'print(__import__("'$1'").'$2'.__doc__)'
+    fi
+}
+
+function python_doc_MyClass_my_function {
+    if [ $# -lt 1 ]
+    then
+	echo "Usage: python_doc_my_function Name_File_Without_extention_.py Class_Name Function_name"
+    else
+	python3 -c 'print(__import__("'$1'").'$2'.'$3'.__doc__)'
     fi
 }
 ###################################################
