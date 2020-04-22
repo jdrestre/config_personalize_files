@@ -209,6 +209,8 @@ done
 
 # Git Pull Status verificated Repo. Source: https://stackoverflow.com/questions/3258243/check-if-pull-needed-in-git
 function git_pull_status {
+    git remote -v update
+
     UPSTREAM=${1:-'@{u}'}
     LOCAL=$(git rev-parse @)
     REMOTE=$(git rev-parse "$UPSTREAM")
