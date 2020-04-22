@@ -50,6 +50,7 @@
 
 ;; current column along with the line
 (setq column-number-mode t)
+(put 'upcase-region 'disabled nil)
 
 ;; Use tabs instead c-default style
 (setq c-default-style "bsd"
@@ -57,3 +58,5 @@
       tab-width 8
       indent-tabs-mode t)
 
+;; Always show numbers line
+(global-linum-mode 1)
