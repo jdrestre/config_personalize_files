@@ -33,6 +33,9 @@ function clean_emacs {
     rm *~
     rm .*~
 }
+
+# Edit Emacs Config .emacs
+alias edit_emacs="emacs ~/.emacs"
 ###################################################
 
 
