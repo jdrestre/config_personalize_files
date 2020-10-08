@@ -10,6 +10,11 @@
 ###################################################
 # GENERAL PERSONALIZED BASH SCRIPT
 
+# Linux update and upgrade
+alias update_linux='sudo apt-get update'
+alias list_upgradable='apt list --upgradable'
+alias upgrade_linux='sudo apt-get upgrade'
+
 # Edit .bashrc commands
 alias bashrc_edit='emacs -nw ~/.bashrc'
 
@@ -36,7 +41,7 @@ function clean_emacs {
 }
 
 # Edit Emacs Config .emacs
-alias edit_emacs="emacs ~/.emacs"
+alias edit_emacs="emacs -nw ~/.emacs"
 ###################################################
 
 
@@ -366,7 +371,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -397,3 +402,7 @@ fi
 # cabal for ShellCheck
 export PATH="$HOME/.cabal/bin:$PATH"
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
