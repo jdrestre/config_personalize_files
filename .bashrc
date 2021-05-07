@@ -11,9 +11,9 @@
 # GENERAL PERSONALIZED BASH SCRIPT
 
 # Linux update and upgrade
-alias update_linux='sudo apt-get update'
+alias update_linux='sudo apt update'
 alias list_upgradable='apt list --upgradable'
-alias upgrade_linux='sudo apt-get upgrade'
+alias upgrade_linux='sudo apt upgrade'
 
 # Edit .bashrc commands
 alias bashrc_edit='emacs -nw ~/.bashrc'
