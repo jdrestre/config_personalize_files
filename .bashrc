@@ -13,7 +13,7 @@
 # Linux update and upgrade
 alias update_linux='sudo apt update'
 alias list_upgradable='apt list --upgradable'
-alias upgrade_linux='sudo apt upgrade'
+alias upgrade_linux='sudo apt upgrade -y'
 
 # Edit .bashrc commands
 alias bashrc_edit='emacs -nw ~/.bashrc'
