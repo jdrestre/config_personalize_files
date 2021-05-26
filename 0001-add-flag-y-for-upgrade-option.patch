@@ -1,0 +1,25 @@
+From 993cd0f76d400a69655bd8b72b4a1ba644124a69 Mon Sep 17 00:00:00 2001
+From: Juan David Restrepo Z <jdrestre79@gmail.com>
+Date: Fri, 14 May 2021 14:17:35 -0500
+Subject: [PATCH] add flag -y for upgrade option
+
+---
+ .bashrc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/.bashrc b/.bashrc
+index cd645e3..9f99065 100644
+--- a/.bashrc
++++ b/.bashrc
+@@ -13,7 +13,7 @@
+ # Linux update and upgrade
+ alias update_linux='sudo apt update'
+ alias list_upgradable='apt list --upgradable'
+-alias upgrade_linux='sudo apt upgrade'
++alias upgrade_linux='sudo apt upgrade -y'
+ 
+ # Edit .bashrc commands
+ alias bashrc_edit='emacs -nw ~/.bashrc'
+-- 
+2.25.1
+
