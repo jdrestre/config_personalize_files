@@ -1,3 +1,13 @@
+# Clean emacs files ~ virgulilla
+function cemacs {
+    rm *~
+    rm .*~
+}
+
+# emacs in new windows terminal
+alias emacs='emacs -nw'
+
+# ls with asteroids inode files
 alias l1='ls -laihFtr'
 
 # Ejecutar Traductor en - es
