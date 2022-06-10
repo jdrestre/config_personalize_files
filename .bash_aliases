@@ -1,3 +1,6 @@
+# Copy to clipboard option cli
+alias clipb='xclip -r -selection clip'
+
 # Clean emacs files ~ virgulilla
 function cemacs {
     rm *~
