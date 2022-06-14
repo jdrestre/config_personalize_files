@@ -1,5 +1,8 @@
+# Information after remove a file o directory
+alias rm='rm -ri'
+
 # Copy to clipboard option cli
-alias clipb='xclip -r -selection clip'
+alias clipb='xclip -r -sel clip'
 
 # Clean emacs files ~ virgulilla
 function cemacs {
