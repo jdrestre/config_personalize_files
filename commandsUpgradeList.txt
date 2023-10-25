@@ -1,0 +1,7 @@
+This is a list with commands to create a list of packages to upgrade from command `apt list --upgradable`
+
+* Create a file to list to upgrade packages
+apt list --upgradable > update.txt
+
+* Use awk command to list packages into a one line in the stout
+awk -F "/" '{printf $1" "}' update.txt
